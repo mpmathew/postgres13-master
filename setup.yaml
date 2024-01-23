@@ -1,34 +1,14 @@
 users:
-  - name: springbootweb
-    password: $POSTGRESQL_SPRINGBOOTWEB_PASSWORD
-    role: superuser
-  - name: dotnet
-    password: $POSTGRESQL_DOTNET_PASSWORD
+  - name: airflow
+    password: $AIRFLOW_POSTGRES_PASSWORD
     role: superuser
 databases:
-  - name: springbootweb
-    owner: springbootweb
+  - name: airflow
+    owner: airflow
     tablespace:
       - name: tb1
-        location: /appz/data/tb1
+        location: /appz/data/airflow
     schemas:
-      - name: schema1
-        authorised_user: springbootweb
+      - name: schema_airflow
+        authorised_user: airflow
         search_path: true
-  - name: dotnet
-    owner: dotnet
-    tablespace:
-      - name: tb2
-        location: /appz/data/tb2
-    schemas:
-      - name: schema2
-        authorised_user: dotnet
-        search_path: true
-   
-restore:
-  - database: springbootweb
-    source:
-      url: 'https://www.ecloudcontrol.com/wp-content/uploads/2021/06/accountsdb-springboot.sql_.zip'
-    user: springbootweb
-    password: $POSTGRESQL_SPRINGBOOTWEB_PASSWORD
-    token: 20220530-0514
