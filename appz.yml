@@ -13,7 +13,6 @@ build:
 deploy:
     context: mpmathew/DEV
     type: statefulset
-    ingress: none
     replicas: 1
     port:
     - 5432
@@ -42,4 +41,4 @@ properties:
       vault: PGPASSWORD
     ALL_DB_BACKUP: 1
     STATEMENT_TIME: 60s
-    revision : 79
+    revision : 80
