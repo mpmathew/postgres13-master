@@ -42,4 +42,4 @@ properties:
       vault: PGPASSWORD
     ALL_DB_BACKUP: 1
     STATEMENT_TIME: 60s
-    revision : 78
+    revision : 79
